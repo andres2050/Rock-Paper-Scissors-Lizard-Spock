@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, make_response, request
 from flaskext.mysql import MySQL
+from flask_cors import CORS
 from pymysql.cursors import DictCursor
 from rules import *
 from queries import *
@@ -13,6 +14,7 @@ app.config["MYSQL_DATABASE_DB"] = 'sheldon'
 app.config['MYSQL_CURSORCLASS'] = DictCursor
 mysql = MySQL()
 mysql.init_app(app)
+CORS(app)
 
 
 @app.route('/top-five-winners')

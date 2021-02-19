@@ -1,0 +1,72 @@
+<app-toolbar></app-toolbar>
+
+
+<div class="content">
+  <img
+    alt="Angular Logo"
+    src="https://upload.wikimedia.org/wikipedia/commons/1/13/TBBT_logo.svg"
+  />
+  <h2>Juego Piedra, Papel, Tijera, Lagarto, Spock</h2>
+
+  <div class="game" *ngIf="step==0">
+    <h3>Iniciar el juego</h3>
+    <button mat-fab
+            color="primary"
+            (click)="play()"
+            aria-label="Comenzar el juego">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+  </div>
+
+  <div class="game" *ngIf="step==1">
+    <h3>Ingresa el nombre de los jugadores</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre Jugador 1</mat-label>
+      <input matInput [(ngModel)]="player1">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre Jugador 2</mat-label>
+      <input matInput [(ngModel)]="player2">
+    </mat-form-field>
+
+    <button mat-fab
+            color="primary"
+            (click)="setPlayers()"
+            aria-label="Comenzar el juego">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+
+    <h4>{{errorMessage}}</h4>
+  </div>
+
+  <div class="game" *ngIf="step==2">
+    <app-game [(ngModel)]="player1Decision"></app-game>
+  </div>
+
+  <div class="game" *ngIf="step==3">
+    <app-game [(ngModel)]="player2Decision"></app-game>
+  </div>
+
+  <div class="game" *ngIf="step==4">
+    
+  </div>
+
+  <h2>Top 5 mejores jugadores</h2>
+
+  <table mat-table [dataSource]="topFiveWinners">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let player"> {{player.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="wins">
+      <th mat-header-cell *matHeaderCellDef> Victorias </th>
+      <td mat-cell *matCellDef="let player"> {{player.wins}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+

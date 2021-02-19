@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  margin: 42px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content img {
+  width: 128px;
+}
+
+table {
+  width: 40%;
+}
+
+.game {
+  display: flex;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  margin-bottom: 30px;
+}
