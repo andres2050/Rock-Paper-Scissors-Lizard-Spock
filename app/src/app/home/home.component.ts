@@ -83,4 +83,12 @@ export class HomeComponent implements OnInit {
       err => console.error(err)
     );
   }
+
+  playAgain(): void {
+    this.step = 2;
+  }
+
+  changeNames(): void {
+    this.step = 1;
+  }
 }

@@ -63,6 +63,15 @@
       <h4>{{player1Decision}} {{gameResult.message}} {{player2Decision}}</h4>
     </div>
 
+    <button mat-raised-button
+            class="space"
+            (click)="playAgain()"
+            color="primary">Volver a jugar</button>
+
+    <button mat-raised-button
+            (click)="changeNames()"
+            color="accent">Cambiar jugadores</button>
+
   </div>
 
   <h2>Top 5 mejores jugadores</h2>
