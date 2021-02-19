@@ -1,1 +1,42 @@
-<p>game works!</p>
+<h4>Jugador <span class="player-name">{{name}}</span> has tu eleccion.</h4>
+<table>
+  <tr>
+    <td>
+      <img
+        src="/assets/rock.png"
+        alt="Piedra"
+        (click)="selection('rock')"
+        width="112px">
+    </td>
+    <td>
+      <img
+        src="/assets/paper.png"
+        alt="Papel"
+        (click)="selection('paper')"
+        width="112px">
+    </td>
+    <td>
+      <img
+        src="/assets/scissors.png"
+        alt="Tijeras"
+        (click)="selection('scissors')"
+        width="112px">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img
+        src="/assets/lizard.png"
+        alt="Lagarto"
+        (click)="selection('lizard')"
+        width="112px">
+    </td>
+    <td>
+      <img
+        src="/assets/spock.png"
+        alt="Spock"
+        (click)="selection('spock')"
+        width="112px">
+    </td>
+  </tr>
+</table>

@@ -37,19 +37,32 @@
       <mat-icon>play_arrow</mat-icon>
     </button>
 
-    <h4>{{errorMessage}}</h4>
+    <h4 class="player-name">{{errorMessage}}</h4>
   </div>
 
   <div class="game" *ngIf="step==2">
-    <app-game [(ngModel)]="player1Decision"></app-game>
+    <app-game [name]="player1" (takeDecision)="setPlayer1Decision($event)"></app-game>
   </div>
 
   <div class="game" *ngIf="step==3">
-    <app-game [(ngModel)]="player2Decision"></app-game>
+    <app-game [name]="player2" (takeDecision)="setPlayer2Decision($event)"></app-game>
   </div>
 
   <div class="game" *ngIf="step==4">
-    
+    <h3>Resultado</h3>
+    <div *ngIf="gameResult.result=='win'">
+      <h3><span class="player-name">{{player1}}</span> gano a <span class="player-name">{{player2}}</span></h3>
+      <h4>{{player1Decision}} {{gameResult.message}} {{player2Decision}}</h4>
+    </div>
+    <div *ngIf="gameResult.result=='lose'">
+      <h3><span class="player-name">{{player2}}</span> gano a <span class="player-name">{{player1}}</span></h3>
+      <h4>{{player2Decision}} {{gameResult.message}} {{player1Decision}}</h4>
+    </div>
+    <div *ngIf="gameResult.result=='equal'">
+      <h3><span class="player-name">{{player1}}</span> empato con <span class="player-name">{{player2}}</span></h3>
+      <h4>{{player1Decision}} {{gameResult.message}} {{player2Decision}}</h4>
+    </div>
+
   </div>
 
   <h2>Top 5 mejores jugadores</h2>

@@ -12,8 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { GameComponent } from './game/game.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { GameComponent } from './game/game.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [HomeComponent]
